@@ -1,45 +1,38 @@
 #!/usr/bin/python3
-"""A class"""
+"""
+This is the "Rectangle"  module.
+
+This module provideslass with attribute width and height.
+Default values of bo are 0.
+"""
+
 
 class Rectangle:
-    """this repangle"""
-
+    """A Rectangle class wand height"""
     def __init__(self, width=0, height=0):
-        """Initialigle class
-        Args:
-            width: represehe rectangle
-            height: represents ectangle
-        Raises:
-            TypeError: if sizinteger
-            ValueError: if size zero
-        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """retriibute"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setsribute"""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError('width must be >= 0')
         self.__width = value
 
     @property
     def height(self):
-        """retrite"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """sets hbute"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
         if value < 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError('height must be >= 0')
         self.__height = value
