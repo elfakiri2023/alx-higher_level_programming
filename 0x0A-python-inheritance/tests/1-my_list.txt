@@ -1,70 +1,44 @@
-Test for 1-my_list.py
--------------------------------------------
+The ``Print List`` module
+================================
 
-case 0: import
->>> MyList = __import__('1-my_list').MyList
->>>
--------------------------------------------
+Using ``MyList``
+----------------
+    >>> MyList = __import__("1-my_list").MyList
 
-case 1: common case
+Now use it:
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(3)
->>> my_list.append(5)
->>> print(my_list)
-[1, 4, 2, 3, 5]
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
->>> print(my_list)
-[1, 4, 2, 3, 5]
->>>
+    >>> a = MyList()
+    >>> a
+    []
 
--------------------------------------------
+    >>> a.append(1)
+    >>> a
+    [1]
 
-case 2: not defined object
+    >>> a.append(5)
+    >>> a.append(3)
+    >>> a
+    [1, 5, 3]
 
->>> MyList = __import__('1-my_list').MyList
->>> my_list2.print_sorted()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'my_list2' is not defined
->>>
+    >>> a.print_sorted()
+    [1, 3, 5]
 
-case 3: same number
+    >>> a.append("b")
+    >>> a
+    [1, 5, 3, 'b']
 
->>> my_list2 = MyList()
->>> my_list2.append(1)
->>> my_list2.append(1)
->>> my_list2.append(1)
->>> my_list2.append(1)
->>> my_list2.print_sorted()
-[1, 1, 1, 1]
->>>
+    >>> a.print_sorted()
+    Traceback (most recent call last):
+        ...
+    TypeError: unorderable types: str() < int()
 
--------------------------------------------
+    >>> b = MyList()
+    >>> b.append(5)
+    >>> b.append(-2)
+    >>> b.append(0)
+    >>> b.append(3)
+    >>> b
+    [5, -2, 0, 3]
 
-case 4: parent object
->>> my_list = [1, 2, 3]
->>> my_list.print_sorted()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-AttributeError: 'list' object has no attribute 'print_sorted'
->>>
-
--------------------------------------------
-
-case 5: negative numbers
-
->>> MyList = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> my_list.append(5)
->>> my_list.append(1)
->>> my_list.append(-1)
->>> my_list.append(51)
->>> my_list.append(-5)
->>> my_list.print_sorted()
-[-5, -1, 1, 5, 51]
->>>
+    >>> b.print_sorted()
+    [-2, 0, 3, 5]
