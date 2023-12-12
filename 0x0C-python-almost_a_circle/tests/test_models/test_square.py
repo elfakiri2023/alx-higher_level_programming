@@ -16,16 +16,16 @@ class TestSquare(unittest.TestCase):
         """Test for Square Class"""
         self.assertEqual(str(
             Square), "<class 'models.square.Square'>")
-    
+
     def test_inheritance(self):
         """Test inheritance Square->Base"""
         self.assertTrue(issubclass(Square, Base))
-    
+
     def test_constructor(self):
         """Test constructor"""
         with self.assertRaises(TypeError) as e:
             r = Square()
-    
+
     def test_constructor_args(self):
         """Test constructor"""
         with self.assertRaises(TypeError) as e:
