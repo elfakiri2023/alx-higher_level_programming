@@ -35,5 +35,6 @@ were given"
 
         self.assertEqual(str(e.exception), s)
 
+
 if __name__ == '__main__':
     unittest.main()
