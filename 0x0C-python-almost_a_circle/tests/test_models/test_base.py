@@ -15,7 +15,7 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         Base.__nb_objects = 0
         pass
-        
+
     def test_base_is_class(self):
         self.assertTrue(inspect.isclass(Base))
 
@@ -159,7 +159,7 @@ were given"
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), "[]")
-        
+
     def test_create(self):
         ''' Teses create method '''
         r1 = Rectangle(5, 8, 2)
@@ -168,7 +168,7 @@ were given"
         self.assertEqual(str(r1), str(r2))
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
-    
+
     '======== Test for 19 =========='
 
     def test_load_from_file(self):
@@ -192,16 +192,7 @@ were given"
         self.assertEqual(str(list_in[0]), str(list_out[0]))
         self.assertNotEqual(id(list_in[1]), id(list_out[1]))
         self.assertEqual(str(list_in[1]), str(list_out[1]))
-        
-        # r2 = Rectangle(2, 4)
-        # Rectangle.save_to_file([r2])
-        # with open("Rectangle.json", "r") as file:
-        #     self.assertEqual(len(file.read()), 52)
-        # s2 = Square(1)
-        # Square.save_to_file([s2])
-        # with open("Square.json", "r") as file:
-        #     self.assertEqual(len(file.read()), 38)
-
 
 if __name__ == "__main__":
     unittest.main()
+
